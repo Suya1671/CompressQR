@@ -1,0 +1,166 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    background-color: lch(88 13 285);
+    color: lch(16 3 281);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    gap: 1rem;
+    display: grid;
+    /* title as first row, then (input and download link) on same row */
+    /* input should take up space that download link doesn't */
+    grid-template:
+        "title title"
+        "file-input name-input"
+        "download-link download-link";
+}
+
+.name-input {
+    grid-area: name-input;
+}
+
+.file-input {
+    grid-area: file-input;
+
+    & label {
+        width: 100%;
+        height: 100%;
+    }
+
+    & input {
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+    }
+
+    cursor: pointer;
+    & > * {
+        cursor: pointer;
+    }
+}
+
+h1 {
+    grid-area: title;
+}
+
+#download-link-gzip {
+    grid-area: download-link;
+    background: lch(59% 51 299deg);
+    color: lch(16% 25 300deg);
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.input {
+    background: lch(81 17.1 286.24);
+    color: lch(16% 25 300);
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    position: relative;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: transform 0.2s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: lch(2 7 290);
+        color: lch(80 3 290);
+    }
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}

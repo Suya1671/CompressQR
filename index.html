@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CompressQR</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>A gzip file compressor entirely in a QR code because funny</h1>
+
+            <div class="input file-input">
+                <input type="file" id="file-input" class="file" />
+                <label for="file-input">Select file</label>
+            </div>
+
+            <input
+                type="text"
+                class="name-input input"
+                id="name-input"
+                placeholder="File Name"
+            />
+
+            <a
+                id="download-link-gzip"
+                download="compressed.gz"
+                href="#"
+                class="hidden"
+            >
+                Download!
+            </a>
+        </div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>
