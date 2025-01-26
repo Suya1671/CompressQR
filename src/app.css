@@ -4,8 +4,9 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    background-color: lch(88 13 285);
-    color: lch(16 3 281);
+
+    background-color: light-dark(lch(88 13 285), lch(2 7 290));
+    color: light-dark(lch(16 3 281), lch(80 3 290));
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -33,8 +34,6 @@ h1 {
     text-align: center;
     gap: 1rem;
     display: grid;
-    /* title as first row, then (input and download link) on same row */
-    /* input should take up space that download link doesn't */
     grid-template:
         "title title"
         "file-input name-input"
@@ -95,13 +94,6 @@ h1 {
 
 .hidden {
     display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        background-color: lch(2 7 290);
-        color: lch(80 3 290);
-    }
 }
 
 /* 1. Use a more-intuitive box-sizing model */
