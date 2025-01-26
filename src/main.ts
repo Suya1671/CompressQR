@@ -38,7 +38,7 @@ fileInput.onchange = async (event) => {
 };
 
 const compress = async (file: File) => {
-  nameInput.value = file.name.replace(/\.[^/.]+$/, "");
+  nameInput.value = file.name;
 
   const gzipStream = new CompressionStream("gzip");
   const gzipReadable = file.stream();
